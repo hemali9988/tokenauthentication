@@ -1,0 +1,50 @@
+<div class="container">  
+    <br>  
+    <h2>Cascading Dropdownlist Example in Angular 7</h2>  
+    <hr>  
+    <br>  
+    <div class="row">  
+    <div class="col-md-2">  
+            <label>Country Name</label>  
+    </div>  
+    <div class="col-md-6">  
+        
+    <select name="Country" (change)="BindState($event.target.value)" class="form-control">  
+        <option value="undefined">Select Country Name</option>  
+        <option *ngFor="let country of service.listCountry" [value]="country.country_Code">  
+            {{country.country_Name}}  
+        </option>  
+    </select>  
+     
+</div>  
+</div>  
+<div class="row">  
+    <div class="col-md-2">  
+            <label>State Name</label>  
+    </div>  
+    <div class="col-md-6">     
+     
+  
+    <select name="State"  class="form-control" (change)="BindCity($event.target.value)">  
+        <option value="undefined">Select State Name</option>  
+        <option *ngFor="let state of service.listState" [value]="state.state_Code">  
+            {{state.state_Name}}  
+        </option>  
+    </select>  
+</div>  
+</div>  
+  
+<div class="row">  
+    <div class="col-md-2">  
+            <label>State Name</label>  
+    </div>  
+    <div class="col-md-6">  
+    <select name="City"  class="form-control">  
+        <option value="undefined">Select City Name</option>  
+        <option *ngFor="let city of service.listCity" [value]="city.district_Code">  
+            {{city.district_Name}}  
+        </option>  
+    </select>  
+</div>  
+</div>  
+</div>  
